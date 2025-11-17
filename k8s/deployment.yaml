@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-hello
+  labels:
+    app: python-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-hello
+  template:
+    metadata:
+      labels:
+        app: python-hello
+    spec:
+      containers:
+        - name: python-hello
+          image: python:3.10-slim
+          ports:
+            - containerPort: 80
+          command: ["python3"]
+          args:
+            - "-m"
+            - "http.server"
+            - "80"
+
