@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python-hello
-          image: python:3.10-slim
+          image: ghcr.io/gigihjihad/devops-gitops-python:latest
           ports:
             - containerPort: 80
           command: ["python3"]
